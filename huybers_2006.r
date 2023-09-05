@@ -25,7 +25,7 @@ eei_frame <- as.data.frame(data.table::rbindlist(list(temperature_denergy_frame,
 energy_imbalance_plot <- ggplot(eei_frame, aes(age, value, colour=group)) +
 geom_line() +
 scale_colour_manual(breaks=c("Temperature", "Ice"), values=c("red", "blue")) +
-scale_x_continuous("Age (ka)") +
+scale_x_continuous("Age (ka)", labels=scales::comma) +
 scale_y_continuous(expression(paste("EEI (Wm"^-2*")"))) +
 theme_light() +
 theme(legend.position="bottom") +
