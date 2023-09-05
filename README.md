@@ -17,7 +17,7 @@ This also can be extended considerably father back using the classic Zachos 2001
 
 ![Zachos 2001 earth energy imbalance](https://raw.githubusercontent.com/leedrake5/earth_energy_imbalance/master/outputs/zachos_petm.jpeg?)
 
-A cautionary note on the graphs here: This method likely generalizes well to the Pleistocene, but as we go farther back things get considerably more complicated. To me the Zachos data shows too wild of swings in energy balance, though this will require future research. 
+A cautionary note on the graphs here: This method likely generalizes well to the Pleistocene, but as we go farther back things get considerably more complicated. To me the Zachos data shows too wild of swings in energy balance, though this will require future research. My supiscion is the oddness is related to data density getting higher as we get closer to the present date.
 
 Note that the time derivative changes the scale of the earth's energy imbalance - using a larger time slice in the Zachos benthic records will result in higher values. The function attempts to force every record to comply with Shackleton et al's age sampling, but the user must make sure Ages are in kiloyears before inputting into the function. 
 
