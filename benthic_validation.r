@@ -5,6 +5,7 @@ lisiecki_stern_2016 <- read.csv("inputs/lisiecki_stern_2016.csv")
 
 benthic_frame <- benthic_eei(benthic_frame=lisiecki_stern_2016, age_column="Age", benthic_column="Global_d18O")
 colnames(benthic_frame)[1] <- "age"
+length(unique(diff(benthic_frame$age)))
 
 ####EnergyCheck
 temperature_frame <- data.frame(benthic_frame[c("age", "ocean_temperature")], Type="Earth State", group="Temperature")

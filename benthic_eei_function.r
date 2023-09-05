@@ -1,7 +1,7 @@
 ###Prep Dynamical Elipcicity
 source("https://raw.githubusercontent.com/leedrake5/sheetCrunch/master/MachineLearning.R")
 library(zoo)
-
+library(rlang)
 ####Set constants for equations
 rho_sw = 1.027
 rho_fw = 0.9998395
@@ -34,8 +34,18 @@ round_any = function(x, accuracy, f=round){f(x/ accuracy) * accuracy}
 ###This function assumes a benthic
 benthic_eei <- function(benthic_frame, age_column="age", benthic_column="d18o"){
     benthic_frame_hold <- benthic_frame
-    benthic_frame <- benthic_frame[rev(order(benthic_frame[,age_column])),]
     
+    benthic_years <- data.frame(age=seq(min(benthic_frame[,age_column], na.rm=T), max(benthic_frame[,age_column], na.rm=T), 0.5))
+    colnames(benthic_years) <- age_column
+    benthic_frame <- merge(benthic_frame, benthic_years, by=age_column, all=T, fill=T)
+    benthic_frame[,age_column] <- plyr::round_any(benthic_frame[,age_column], 0.5)
+    benthic_frame <- as.data.frame(as.data.table(benthic_frame)[, lapply(.SD, base::mean, na.rm=TRUE), by=age_column ])
+    benthic_frame <- benthic_frame[rev(order(benthic_frame[,age_column])),]
+
+    benthic_frame <- benthic_frame %>%
+            mutate(!!benthic_column := zoo::na.approx(!!parse_quo(benthic_column, env = caller_env())))
+        
+        
     ###Assumption: d18O entirly ocean temperature
     benthic_frame$ocean_temperature <- 0.1*(benthic_frame[,benthic_column]^2) - 4.38*benthic_frame[,benthic_column] + 16.9
     benthic_frame$delta_energy_global_ocean_temperature <- ((benthic_frame$ocean_temperature - mean(benthic_frame$ocean_temperature, na.rm=T)) * volume_ocean * rho_sw * cp_sw)/10

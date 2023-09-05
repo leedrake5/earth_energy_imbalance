@@ -9,6 +9,7 @@ huybers_2006$Benthic_adjust <- huybers_2006$Benthic+3.94
 
 benthic_frame <- benthic_eei(benthic_frame=huybers_2006, age_column="Age", benthic_column="Benthic_adjust")
 colnames(benthic_frame)[1] <- "age"
+length(unique(diff(benthic_frame$age)))
 
 
 temperature_denergy_frame <- data.frame(benthic_frame[c("age", "global_energy_imbalance_ocean_temperature")], Type="Imbalance", group="Temperature")
