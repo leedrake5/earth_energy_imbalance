@@ -21,3 +21,11 @@ A cautionary note on the graphs here: This method likely generalizes well to the
 
 Note that the time derivative changes the scale of the earth's energy imbalance - using a larger time slice in the Zachos benthic records will result in higher values. The function attempts to force every record to comply with Shackleton et al's age sampling, but the user must make sure Ages are in kiloyears before inputting into the function. 
 
+## Citations
+Huybers, P. J. Early Pleistocene glacial cycles and the integrated summer insolation forcing. Science 313(5786): 508-511 (2006). https://doi.org/10.1126/science.1125249
+
+Lisiecki, L. E. & Stern, J. V. Regional and global benthic δ18O stacks for the last glacial cycle. Paleoceanography 31, 1368–1394 (2016). https://doi.org/10.1002/2016PA003002
+
+Shackleton, S., Seltzer, A., Baggenstos, D. et al. Benthic δ18O records Earth’s energy imbalance. Nat. Geosci. 16, 797–802 (2023). https://doi.org/10.1038/s41561-023-01250-y
+
+Zachos, J., Pagani, H., Sloan, L., Thomas, E. & Billups, K. Trends, rhythms, and aberrations in global climate 65 Ma to present. Science 292, 686–693 (2001). https://doi.org/10.1126/science.1059412 
