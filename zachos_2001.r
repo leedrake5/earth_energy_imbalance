@@ -4,9 +4,9 @@ source("benthic_eei_function.r")
 ###Extensive benthic δ18O records, note that ice-based calcuations irrelevant past 18 mya.
 zachos_2001 <- read.csv("inputs/zachos_2001.csv")
 zachos_2001$Age <- zachos_2001$Age*1000
-zachos_2001 <- zachos_2001[complete.cases(zachos_2001$d18O.5pt),]
+#zachos_2001 <- zachos_2001[complete.cases(zachos_2001$d18O.5pt),]
 
-benthic_frame <- benthic_eei(benthic_frame=zachos_2001, age_column="Age", benthic_column="d18O.5pt")
+benthic_frame <- benthic_eei(benthic_frame=zachos_2001, age_column="Age", benthic_column="d18O", smooth=30)
 colnames(benthic_frame)[1] <- "age"
 length(unique(diff(benthic_frame$age)))
 

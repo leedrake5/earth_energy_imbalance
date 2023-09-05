@@ -32,7 +32,7 @@ time_derivative <- function(y)
 round_any = function(x, accuracy, f=round){f(x/ accuracy) * accuracy}
 
 ###This function assumes a benthic
-benthic_eei <- function(benthic_frame, age_column="age", benthic_column="d18o"){
+benthic_eei <- function(benthic_frame, age_column="age", benthic_column="d18o", smooth=1){
     benthic_frame_hold <- benthic_frame
     
     benthic_years <- data.frame(age=seq(min(benthic_frame[,age_column], na.rm=T), max(benthic_frame[,age_column], na.rm=T), 0.5))
@@ -44,6 +44,10 @@ benthic_eei <- function(benthic_frame, age_column="age", benthic_column="d18o"){
 
     benthic_frame <- benthic_frame %>%
             mutate(!!benthic_column := zoo::na.approx(!!parse_quo(benthic_column, env = caller_env())))
+            
+    if(smooth > 1){
+        benthic_frame[,benthic_column] <- TTR::DEMA(benthic_frame[,benthic_column], smooth)
+    }
         
         
     ###Assumption: d18O entirly ocean temperature
