@@ -13,11 +13,15 @@ This does not create an exact 1:1, and unit conversions aren't perfect on my end
 
 ![Huybers 2006 earth energy imbalance](https://raw.githubusercontent.com/leedrake5/earth_energy_imbalance/master/outputs/huybers_mis05.jpeg?)
 
-This also can be extended considerably father back using the classic Zachos 2001 data: 
+This also can be extended considerably father back using the classic Zachos 2001 data with overlaps checked against the more recent records: 
+
+![Zachos 2001 earth energy imbalance](https://raw.githubusercontent.com/leedrake5/earth_energy_imbalance/master/outputs/zachos_pleist.jpeg?)
+
+...and even further back to the Paleo-Eocene Thermal Maximum (PETM)
 
 ![Zachos 2001 earth energy imbalance](https://raw.githubusercontent.com/leedrake5/earth_energy_imbalance/master/outputs/zachos_petm.jpeg?)
 
-A cautionary note on the graphs here: This method likely generalizes well to the Pleistocene, but as we go farther back things get considerably more complicated. To me the Zachos data shows too wild of swings in energy balance, though this will require future research. My supiscion is the oddness is related to data density getting higher as we get closer to the present date. I added a smoothing parameter that, when set to 50 (e.g. 25 ka) resolves both high values compared to LR04 and to a lesser extent eveness.
+One observable phenomenon is that a) energy imbalances are more extreme the later in the cenozoic we are and b) the PETM doesn't feature higher energy imbalances but instead those which occur tend to be positive, not negative. A cautionary note on the graphs here: This method likely generalizes well to the Pleistocene, but as we go farther back things get considerably more complicated. To me the Zachos data shows too wild of swings in energy balance, though this will require future research. My supiscion is the oddness is related to data density getting higher as we get closer to the present date. I added a smoothing parameter that, when set to 50 (e.g. 25 ka) resolves both high values compared to LR04 and to a lesser extent eveness.
 
 Note that the time derivative changes the scale of the earth's energy imbalance - using a larger time slice in the Zachos benthic records will result in higher values. The function attempts to force every record to comply with Shackleton et al's age sampling, but the user must make sure Ages are in kiloyears before inputting into the function. 
 

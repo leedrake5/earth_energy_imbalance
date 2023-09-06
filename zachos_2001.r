@@ -31,3 +31,14 @@ theme(legend.position="bottom") +
 ggforce::facet_zoom(xlim = c(50, 60), zoom.size = 0.6)
 
 ggsave("outputs/zachos_petm.jpeg", energy_imbalance_plot, height=5, width=7, device="jpg")
+
+
+energy_imbalance_plot2 <- ggplot(eei_frame, aes(age/1000, value, colour=group)) +
+geom_line() +
+scale_colour_manual(breaks=c("Temperature", "Ice"), values=c("red", "blue")) +
+scale_x_continuous("Age (mya)", labels=scales::comma) +
+scale_y_continuous(expression(paste("EEI (Wm"^-2*")"))) +
+theme_light() +
+theme(legend.position="bottom") +
+ggforce::facet_zoom(xlim = c(0, 2.6), zoom.size = 0.6)
+ggsave("outputs/zachos_pleist.jpeg", energy_imbalance_plot2, height=5, width=7, device="jpg")
