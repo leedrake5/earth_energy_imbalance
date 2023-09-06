@@ -32,3 +32,15 @@ theme(legend.position="bottom") +
 ggforce::facet_zoom(xlim = c(110, 180), zoom.size = 0.6)
 
 ggsave("outputs/huybers_mis05.jpeg", energy_imbalance_plot, height=5, width=7, device="jpg")
+
+
+energy_imbalance_plot <- ggplot(eei_frame, aes(age, value, colour=group)) +
+geom_line() +
+scale_colour_manual(breaks=c("Temperature", "Ice"), values=c("red", "blue")) +
+scale_x_continuous("Age (ka)", labels=scales::comma) +
+scale_y_continuous(expression(paste("EEI (Wm"^-2*")"))) +
+theme_light() +
+theme(legend.position="bottom") +
+ggforce::facet_zoom(xlim = c(0, 150), zoom.size = 0.6)
+
+ggsave("outputs/huybers_recent.jpeg", energy_imbalance_plot, height=5, width=7, device="jpg")

@@ -11,9 +11,9 @@ The replication attempt here is not perfect, but it is useable. This is the meth
 
 This does not create an exact 1:1, and unit conversions aren't perfect on my end, but the results are useable and consistent with the papers. This can thus be adapted to longer time sequences, such as Huyber's average of the LRO4 data (I prefer this due to reduced dependence on orbital assumptions): 
 
-![Huybers 2006 earth energy imbalance](https://raw.githubusercontent.com/leedrake5/earth_energy_imbalance/master/outputs/huybers_mis05.jpeg?)
+![Huybers 2006 earth energy imbalance](https://raw.githubusercontent.com/leedrake5/earth_energy_imbalance/master/outputs/huybers_recent.jpeg?)
 
-This also can be extended considerably father back using the classic Zachos 2001 data with overlaps checked against the more recent records: 
+Less variation occurs in this record compared to the Lisiecki and Stern 2016 recrod, but the imbalances associated with the Holocene and Eemian interglacial transitions are still of comparable magnitude. This also can be extended considerably father back using the classic Zachos 2001 data with overlaps checked against the more recent records: 
 
 ![Zachos 2001 earth energy imbalance](https://raw.githubusercontent.com/leedrake5/earth_energy_imbalance/master/outputs/zachos_pleist.jpeg?)
 
