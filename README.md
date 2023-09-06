@@ -9,7 +9,9 @@ The present repository is an implementation of the methods described in [Shackle
 The replication attempt here is not perfect, but it is useable. This is the method adapted to [the paper's data](https://doi.org/10.5281/zenodo.8237374):
 ![Present replication attempt](https://raw.githubusercontent.com/leedrake5/earth_energy_imbalance/master/outputs/calculations_check.jpeg?)
 
-This does not create an exact 1:1, and unit conversions aren't perfect on my end, but the results are useable and consistent with the papers. This can thus be adapted to longer time sequences, such as Huyber's average of the LRO4 data (I prefer this due to reduced dependence on orbital assumptions): 
+This does not create an exact 1:1, and unit conversions aren't perfect on my end, but the results are useable and consistent with the papers. Note that ocean temperatures less than -1.8°C would indicate frozen oceans, and thus are implausible. This could be corrected by reverting to the sea level change model at these temperatures, but there would be limited mathematical impact on output either way. 
+
+This can thus be adapted to longer time sequences, such as Huyber's average of the LRO4 data (I prefer this due to reduced dependence on orbital assumptions): 
 
 ![Huybers 2006 earth energy imbalance](https://raw.githubusercontent.com/leedrake5/earth_energy_imbalance/master/outputs/huybers_recent.jpeg?)
 
